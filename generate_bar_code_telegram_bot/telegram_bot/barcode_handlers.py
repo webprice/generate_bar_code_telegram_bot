@@ -73,13 +73,13 @@ def handle_message(update, context):
     if buffer is None:
         error_message = ("Error processing your request"
                                   f"⚫Bot source code: \n👉{settings.GITHUB_REPO_URL}. "
-                                  f"⚫For any issues, feature requests, support and feedback: \n👉{settings.GITHUB_REPO_URL}")
+                                  f"⚫For any issues, feature requests, support and feedback: \n👉{settings.OWNER_WEBSITE_URL}")
         update.message.reply_text(error_message, disable_web_page_preview=True)
         return
 
     response_msg = ("🦜Barcode code generated successfully! Scan the Barcode code below to view the message.\n\n"
                     f"⚫Bot source code: \n👉{settings.GITHUB_REPO_URL}.\n "
-                    f"⚫For any issues, feature requests, support and feedback: \n👉{settings.GITHUB_REPO_URL}")
+                    f"⚫For any issues, feature requests, support and feedback: \n👉{settings.OWNER_WEBSITE_URL}")
 
     update.message.reply_photo(buffer, caption=response_msg)
 
